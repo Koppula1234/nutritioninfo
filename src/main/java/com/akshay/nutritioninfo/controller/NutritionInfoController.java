@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.akshay.nutritioninfo.entity.Value;
 import com.akshay.nutritioninfo.service.NutritionInfoService;
 
 @RestController
@@ -16,7 +17,7 @@ public class NutritionInfoController {
 	private NutritionInfoService nutritionInfoService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getNutritionInfoByFoodName(@RequestParam("name") String foodName) {
+    public Value getNutritionInfoByFoodName(@RequestParam("name") String foodName) {
         return nutritionInfoService.getNutritionInfoByFoodName(foodName);
     }
 }
